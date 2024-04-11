@@ -24,12 +24,14 @@ export class FiberNode {
 	updatedQueue: unknown;
 
 	constructor(tag: WorkTag, pendingProps: Props, key: Key) {
+		// 本身实例
 		this.tag = tag;
 		this.key = key;
 
 		this.stateNode = null;
 		this.type = null;
 
+		// 构成树状结构
 		this.return = null;
 		this.sibling = null;
 		this.child = null;
@@ -37,12 +39,14 @@ export class FiberNode {
 
 		this.ref = null;
 
+		// 作为工作单元
 		this.pendingProps = pendingProps;
 		this.memoizedState = null;
 		this.memoizedProps = null;
 		this.updatedQueue = null;
 
 		this.alternate = null;
+		// 副作用
 		this.flags = NoFlags;
 		this.subtreeFlags = NoFlags;
 	}
